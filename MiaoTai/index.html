@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>随机图片展示</title>
+    <script type="text/javascript">
+        function getRandomImage() {
+            var images = [
+                'images/img1.jpg',
+                'images/img2.jpg',
+                'images/img3.jpg'
+            ];
+            var randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+
+        window.onload = function() {
+            var imgSrc = getRandomImage();
+            document.getElementById('randomImage').src = imgSrc;
+            document.getElementById('imageLink').href = imgSrc; // 设置链接指向随机图片
+        }
+    </script>
+</head>
+<body>
+    <h1>点击下面的图片查看大图：</h1>
+    <!-- 使用<a>标签包裹<img>标签 -->
+    <a id="imageLink" target="_blank">
+        <img id="randomImage" alt="随机图片" />
+    </a>
+</body>
+</html>
